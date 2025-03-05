@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('empleados', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('primerApellido');
-            $table->string('segundoApellido');
-            $table->string('rol');
-            $table->string('fechaNacimiento');
-            $table->string('dni');
-            $table->string('email');
-            $table->foreignId('oficinas_id')->constrained('oficinas')->onDelete('cascade');
+            $table->string('primer_apellido');
+            $table->string('segundo_apellido')->nullable();
+            $table->string('rol')->nullable();
+            $table->date('fecha_nacimiento')->nullable();
+            $table->string('dni')->unique();
+            $table->string('email')->unique();
+            $table->foreignId('oficina_id')->constrained('oficinas')->onDelete('cascade');
             $table->timestamps();
         });
     }
