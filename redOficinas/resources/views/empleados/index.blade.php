@@ -66,6 +66,18 @@
             font-weight: bold;
             margin-bottom: 15px;
         }
+
+        .btn-edit {
+            background-color: #ffc107; /* Color amarillo */
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .btn-edit:hover {
+            background-color: #e0a800; /* Color amarillo oscuro */
+        }
     </style>
 </head>
 <body>
@@ -98,6 +110,9 @@
                 <td>{{ $empleado->fecha_nacimiento }}</td>
                 <td>{{ $empleado->dni }}</td>
                 <td>{{ $empleado->email }}</td>
+                <td>
+                    <a href="{{ route('oficinas.empleados.edit', [$oficina, $empleado]) }}" class="btn-edit">Editar</a>
+                </td>
             </tr>
         @endforeach
         </tbody>

@@ -13,3 +13,7 @@ Route::get('/oficinas/{nombre}', [OficinasController::class, 'mostrarOficinas'])
 Route::get('/oficinas/{oficina}/empleados', [EmpleadoController::class, 'index'])->name('oficinas.empleados.index');
 Route::get('/oficinas/{oficina}/empleados/create', [EmpleadoController::class, 'create'])->name('oficinas.empleados.create');
 Route::post('/oficinas/{oficina}/empleados', [EmpleadoController::class, 'store'])->name('oficinas.empleados.store');
+Route::get('/oficinas/{oficina}/empleados/{empleado}/edit', [EmpleadoController::class, 'edit'])->name('oficinas.empleados.edit');
+Route::put('/oficinas/{oficina}/empleados/{empleado}', [EmpleadoController::class, 'update'])->name('oficinas.empleados.update');
+
+
